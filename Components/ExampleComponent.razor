@@ -1,0 +1,11 @@
+@typeparam TItem
+
+<p>@DisplayFunc(Thing)</p>
+
+@code {
+    [Parameter]
+    public Func<TItem, string> DisplayFunc { get; set; }
+
+    [Parameter]
+    public TItem Thing { get; set; }
+}
