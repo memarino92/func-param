@@ -1,0 +1,19 @@
+﻿@page "/"
+
+<ExampleComponent Thing=@ThingOne DisplayFunc=@((x) => x.FieldOne ) />
+<ExampleComponent Thing=@ThingTwo DisplayFunc=@((x) => $"{x.FirstName} {x.LastName}" ) />
+
+@code {
+    public ExampleClass ThingOne = new ExampleClass { FieldOne = "One", FieldTwo = "Two" };
+    public ExamplePerson ThingTwo = new ExamplePerson { FirstName = "Michael", LastName = "Marino" };
+    public class ExampleClass
+    {
+        public string FieldOne { get; set; }
+        public string FieldTwo { get; set; }
+    }
+    public class ExamplePerson
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+}
